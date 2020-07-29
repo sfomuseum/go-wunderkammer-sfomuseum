@@ -6,17 +6,35 @@ import (
 	"context"
 	"encoding/json"
 	"flag"
-	"github.com/tidwall/pretty"
 	"github.com/aaronland/go-wunderkammer/oembed"
+	"github.com/jtacoma/uritemplates"
+	"github.com/tidwall/pretty"
 	"io"
 	"io/ioutil"
 	"log"
+	"net/url"
 	"os"
+	"path/filepath"
 	"runtime"
 	"sync"
 	"sync/atomic"
 	"time"
 )
+
+const SFOMUSEUM_URI_TEMPLATE string = "sfom://id/{id}"
+
+var sfomuseum_uri_template *uritemplates.UriTemplate
+
+func init() {
+
+	t, err := uritemplates.Parse(SFOMUSEUM_URI_TEMPLATE)
+
+	if err != nil {
+		panic(err)
+	}
+
+	sfomuseum_uri_template = t
+}
 
 func main() {
 
@@ -35,7 +53,7 @@ func main() {
 	ctx, cancel := context.WithCancel(ctx)
 
 	defer cancel()
-	
+
 	writers := make([]io.Writer, 0)
 
 	if *to_stdout {
@@ -127,6 +145,26 @@ func main() {
 				// pass
 			}
 
+			u, err := url.Parse(rec.ObjectURI)
+
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			path := u.Path
+			id := filepath.Base(path)
+
+			uri_values := make(map[string]interface{})
+			uri_values["id"] = id
+
+			object_uri, err := sfomuseum_uri_template.Expand(uri_values)
+
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			rec.ObjectURI = object_uri
+
 			body, err := json.Marshal(rec)
 
 			if err != nil {
@@ -163,5 +201,3 @@ func main() {
 		log.Printf("Time to process %d records, %v\n", count, time.Since(t0))
 	}
 }
-
-

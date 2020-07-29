@@ -3,6 +3,8 @@ github.com/aaronland/go-json-query v0.0.1/go.mod h1:dGc7y824R93ugQMTldL7PFD/SPVG
 github.com/aaronland/go-wunderkammer v0.0.6 h1:YuVG3HHB/rYxSDTDQhjK1azyCztpJWU9MgI5F1TKAfk=
 github.com/aaronland/go-wunderkammer v0.0.6/go.mod h1:DeyuzEzSZ59ikUbAQ+ulHRMLxTx4Nz7Q2uA9neLvnbs=
 github.com/andybalholm/cascadia v1.1.0/go.mod h1:GsXiBklL0woXo1j/WYWtSYYC4ouU9PqHO0sqidkEA4Y=
+github.com/jtacoma/uritemplates v1.0.0 h1:xwx5sBF7pPAb0Uj8lDC1Q/aBPpOFyQza7OC705ZlLCo=
+github.com/jtacoma/uritemplates v1.0.0/go.mod h1:IhIICdE9OcvgUnGwTtJxgBQ+VrTrti5PcbLVSJianO8=
 github.com/mattn/go-sqlite3 v1.14.0/go.mod h1:JIl7NbARA7phWnGvh0LKTyg7S9BA+6gx71ShQilpsus=
 github.com/tidwall/gjson v1.6.0/go.mod h1:P256ACg0Mn+j1RXIDXoss50DeIABTYK1PULOJHhxOls=
 github.com/tidwall/match v1.0.1/go.mod h1:LujAq0jyVjBy028G1WhWfIzbpQfMO8bBZ6Tyb0+pL9E=

@@ -1,4 +1,6 @@
 # github.com/aaronland/go-wunderkammer v0.0.6
 github.com/aaronland/go-wunderkammer/oembed
+# github.com/jtacoma/uritemplates v1.0.0
+github.com/jtacoma/uritemplates
 # github.com/tidwall/pretty v1.0.1
 github.com/tidwall/pretty
