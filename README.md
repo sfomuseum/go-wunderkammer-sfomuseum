@@ -19,13 +19,13 @@ $> /usr/local/go-whosonfirst-data/bin/emit \
 	-query 'properties.wof:depicts=1159396315' \
 	-oembed /usr/local/data/sfomuseum-data-media/data/ \
    
-   | bin/update-object-uri/main.go \
+   | bin/update-object-uri \
    	-format \
 
    | /usr/local/go-wunderkammer-image/bin/append-dataurl \
 
    | /usr/local/go-wunderkammer/bin/wunderkammer-db \
-	- database-dsn 'sql://sqlite3/usr/local/go-wunderkammer/gallery.db
+	-database-dsn 'sql://sqlite3/usr/local/go-wunderkammer/gallery.db
 ```
 
 ## See also
