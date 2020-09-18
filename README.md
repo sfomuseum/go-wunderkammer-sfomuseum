@@ -24,8 +24,11 @@ $> /usr/local/go-whosonfirst-data/bin/emit \
 
    | /usr/local/go-wunderkammer-image/bin/append-dataurl \
 
+   | /usr/local/go-wunderkammer/bin/append \
+	-fragment boarding-area-f \
+
    | /usr/local/go-wunderkammer/bin/wunderkammer-db \
-	-database-dsn 'sql://sqlite3/usr/local/go-wunderkammer/gallery.db
+	-database-dsn 'sql://sqlite3/usr/local/go-wunderkammer/boarding-area-f.db
 ```
 
 ## See also
